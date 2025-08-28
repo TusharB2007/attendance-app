@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Attendance System (Demo)</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 720px; margin: 40px auto; }
+    h2 { margin-bottom: 8px; }
+    form { margin: 16px 0; padding: 12px; border: 1px solid #ddd; border-radius: 8px; }
+    input { padding: 8px; margin: 4px; }
+    button { padding: 8px 12px; cursor: pointer; }
+    .hint { color: #666; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <h2>Attendance System (Demo)</h2>
+
+  <h3>Teacher: Set Code</h3>
+  <form action="/set_code" method="post">
+    <input type="text" name="code" placeholder="Enter code (e.g., 583920)" required>
+    <button type="submit">Set</button>
+  </form>
+
+  <h3>Student: Submit Attendance</h3>
+  <form action="/submit" method="post">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="text" name="roll" placeholder="Roll No" required>
+    <input type="text" name="code" placeholder="Code from teacher" required>
+    <button type="submit">Submit</button>
+  </form>
+
+  {% if message %}
+    <p><b>{{ message }}</b></p>
+  {% endif %}
+
+  <p class="hint">👉 Teacher can check: <a href="/list">Attendance List</a></p>
+</body>
+</html>

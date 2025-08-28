@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Attendance List</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 720px; margin: 40px auto; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ddd; padding: 8px; }
+    th { background: #f6f6f6; }
+  </style>
+</head>
+<body>
+  <h2>Attendance Records</h2>
+  <table>
+    <tr><th>Name</th><th>Roll</th><th>Time</th></tr>
+    {% for r in records %}
+      <tr><td>{{ r.name }}</td><td>{{ r.roll }}</td><td>{{ r.time }}</td></tr>
+    {% endfor %}
+  </table>
+  <p><a href="/">⬅ Back</a></p>
+</body>
+</html>
